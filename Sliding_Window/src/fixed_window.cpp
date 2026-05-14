@@ -9,6 +9,19 @@
 using namespace std;
 
 /*
+int main()
+{
+    vector<int> v = {7,4,3,9,1,8,5,2,6};
+    string vv = "abciiidef";
+    int k=3;
+    int m = max_number_vowels(vv,k);
+    cout<<m<<endl;
+
+    return 0;
+}
+ * /
+
+/*
 1. **Maximum Sum Subarray of Size K**
 
    Given an array of positive integers and a positive number k, find the maximum sum of any contiguous subarray of size k.
@@ -388,3 +401,157 @@ double max_average_subarray(vector<int>& v, int k){
 
     return res/k;
 }
+
+/*
+15. **K Radius Subarray Averages**
+
+    Build and return an array avgs of length n where avgs[i] is the k-radius average for the subarray centered at index i.
+
+    Input: `nums = [7,4,3,9,1,8,5,2,6]`, `k = 3`
+    Output: `[-1,-1,-1,5,4,4,-1,-1,-1]`
+*/
+
+vector<int> k_radius_subarray_averages(vector<int>& v, int& k){
+    vector<int> res;
+
+    int i = 0;
+    int sub = 0;
+
+    while(i-k<0){
+        res.push_back(-1);
+        i++;
+    }
+
+    for(int j=i-k; j<i+k+1; j++){
+        sub += v[j];
+    }
+    res.push_back(sub/(2*k+1));
+
+    for(int j=i+k+1; j<v.size(); j++){
+        sub += v[j] - v[j-2*k-1];
+        res.push_back(sub/(2*k+1));
+    }
+
+    int j = v.size()-k;
+    while(j<v.size()){
+        res.push_back(-1);
+        j++;
+    }
+
+    for(auto a: res){
+        cout<<a<<" ";
+    }
+
+    return res;
+}
+
+/*
+16. **Substrings of Size Three With Distinct Characters**
+
+    A string is good if there are no repeated characters.
+
+    Given a string s, return the number of good substrings of length three in s.
+    If there are multiple occurrences of the same substring, every occurrence should be counted.
+    A substring is a contiguous sequence of characters in a string.
+
+    Input: `s = "xyzzaz"`
+    Output: `1`
+    Explanation: There are 4 substrings of size 3: "xyz", "yzz", "zza", and "zaz".
+    The only good substring of length 3 is "xyz".
+*/
+
+bool distincs(string s){
+    map<char, int> m;
+    for(char& a: s){
+        m[a]++;
+    }
+
+    for(auto& a: m){
+        if(a.second!=1){
+            return false;
+        }
+    }
+
+    return true;
+}
+
+int count_string_with_distinct_char(string v, int& k){
+    int res = 0;
+    string sub  = "";
+
+    for(int i=0; i<k; i++){
+        sub += v[i];
+    }
+    if(distincs(sub)){
+        res++;
+    }
+
+    for(int i=k; i<v.size(); i++){
+        sub += v[i];
+        sub.erase(0,1);
+        if(distincs(sub)){
+            res++;
+        }
+    }
+    return res;
+}
+
+/*
+24. **Maximum Number of Vowels in a Substring of Given Length**
+
+    Given a string s and an integer k.
+
+    Return the maximum number of vowel letters in any substring of s with length k.
+
+    Vowel letters in English are (a, e, i, o, u).
+
+    Input: `s = "abciiidef"`, `k = 3`
+    Output: `3`
+    Explanation: The substring "iii" contains 3 vowel letters.
+*/
+
+bool isVowel(char s){
+    string m = "aeyuio";
+
+    if(m.find(s)!=string::npos){
+        return true;
+    }
+
+    return false;
+}
+
+int max_number_vowels(string v, int& k){
+    int res = 0;
+    string sub  = "";
+
+    for(int i=0; i<k; i++){
+        sub+=v[i];
+        if(isVowel(v[i])){
+            res++;
+        }
+    }
+
+    int maxi = res;
+    string maxir = sub;
+
+    for(int i=k; i<v.size(); i++){
+        sub+=v[i];
+        sub.erase(0,1);
+        if(isVowel(v[i])){
+            res++;
+        }
+        if(isVowel(v[i-k])){
+            res--;
+        }
+
+        if(maxi<res){
+            maxi = res;
+            maxir = sub;
+            cout<<maxir<<endl;
+        }
+    }
+
+
+    return maxi;
+}
+
