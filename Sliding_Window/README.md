@@ -72,36 +72,47 @@ La fenêtre grandit et rétrécit selon une **condition**. On utilise deux point
 
 ### Taille fixe
 
-```python
-def sliding_window_fixed(arr, k):
-    window_sum = sum(arr[:k])
-    result = window_sum
+```C++
+int slidingWindowFixed(const vector<int>& arr, int k) {
+    int windowSum = 0;
 
-    for i in range(k, len(arr)):
-        window_sum += arr[i] - arr[i - k]  # on ajoute à droite, on retire à gauche
-        result = max(result, window_sum)
+    // Somme de la première fenêtre
+    for (int i = 0; i < k; i++) {
+        windowSum += arr[i];
+    }
 
-    return result
+    int result = windowSum;
+
+    // Déplacement de la fenêtre
+    for (int i = k; i < arr.size(); i++) {
+        windowSum += arr[i] - arr[i - k];
+        result = max(result, windowSum);
+    }
+
+    return result;
 ```
 
 ### Taille variable
 
-```python
-def sliding_window_variable(arr):
-    left = 0
-    result = 0
+```C++
+int slidingWindowVariable(const vector<int>& arr) {
+    int left = 0;
+    int result = 0;
 
-    for right in range(len(arr)):
-        # Agrandir la fenêtre : intégrer arr[right]
+    for (int right = 0; right < arr.size(); right++) {
+        // Agrandir la fenêtre : intégrer arr[right]
 
-        while condition_violée:
-            # Rétrécir la fenêtre : retirer arr[left]
-            left += 1
+        while (/* condition violée */) {
+            // Rétrécir la fenêtre : retirer arr[left]
+            left++;
+        }
 
-        # Mettre à jour le résultat
-        result = max(result, right - left + 1)
+        // Mettre à jour le résultat
+        result = max(result, right - left + 1);
+    }
 
-    return result
+    return result;
+}
 ```
 
 ---
