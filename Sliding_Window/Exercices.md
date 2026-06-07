@@ -19,51 +19,51 @@ Taille variable (la fenêtre grandit/rétrécit selon une condition)
 
 1. **Maximum Sum Subarray of Size K**
 
-   Given an array of positive integers and a positive number k, find the maximum sum of any contiguous subarray of size k.
+    Given an array of positive integers and a positive number k, find the maximum sum of any contiguous subarray of size k.
 
-   Input: `[3, 5, 2, 1, 7]`, `k=2`
+    Input: `[3, 5, 2, 1, 7]`, `k=2`
    
-   Output: `8`
+    Output: `8`
 
-   The subarray `[1, 7]` is the sum of the maximum sum.
+    The subarray `[1, 7]` is the sum of the maximum sum.
 
 3. **Count Occurrences of Anagram**
 
-   Given a word and a text, return the count of occurrences of the anagrams of the word in the text.
+    Given a word and a text, return the count of occurrences of the anagrams of the word in the text.
 
-   Input: `text = gotxxotgxdogt`, `word = got`
+    Input: `text = gotxxotgxdogt`, `word = got`
    
-   Output: `3`
+    Output: `3`
 
-   Words "got," "otg" and "ogt" are anagrams of "got."
+    Words "got," "otg" and "ogt" are anagrams of "got."
 
 5. **Difference Between the Maximum and Minimum Average of all K-Length Continuous Subarrays**
 
-   Input: `arr[] = {3, 8, 9, 15}`, `K = 2`
+    Input: `arr[] = {3, 8, 9, 15}`, `K = 2`
    
-   Output: `6.5`
+    Output: `6.5`
 
-   All subarrays of length 2 are `{3, 8}`, `{8, 9}`, `{9, 15}` and their averages are `(3+8)/2 = 5.5`, `(8+9)/2 = 8.5`, and `(9+15)/2 = 12.0` respectively.
+    All subarrays of length 2 are `{3, 8}`, `{8, 9}`, `{9, 15}` and their averages are `(3+8)/2 = 5.5`, `(8+9)/2 = 8.5`, and `(9+15)/2 = 12.0` respectively.
 
-   Therefore, the difference between the maximum(=12.0) and minimum(=5.5) is `12.0 - 5.5 = 6.5`.
+    Therefore, the difference between the maximum(=12.0) and minimum(=5.5) is `12.0 - 5.5 = 6.5`.
 
 7. **Find the Longest Substring of a String Containing 'K' Distinct Characters**
 
-   Input: `s = 'abcbdbdbbdcdabd'`, `k = 2`
+    Input: `s = 'abcbdbdbbdcdabd'`, `k = 2`
    
-   Output: `bdbdbbd`
+    Output: `bdbdbbd`
 
 9. **Find Duplicates Within a Range 'K' in an Array**
 
-   Input: `nums = [5, 6, 8, 2, 4, 6, 9]`, `k = 2`
+    Input: `nums = [5, 6, 8, 2, 4, 6, 9]`, `k = 2`
    
-   Output: `False`
+    Output: `False`
 
 11. **Find Minimum Sum SubArray of Size K**
 
-   Input: `arr = [10, 4, 2, 5, 6, 3, 8, 1]`, `k = 3`
+    Input: `arr = [10, 4, 2, 5, 6, 3, 8, 1]`, `k = 3`
    
-   Output: `11`
+    Output: `11`
 
 11. **Length of the Longest Substring That Doesn't Contain Any Vowels**
 
@@ -244,8 +244,11 @@ Taille variable (la fenêtre grandit/rétrécit selon une condition)
     Given an array of integers nums and an integer limit, return the size of the longest non-empty subarray such that the absolute difference between any two elements of this subarray is less than or equal to the limit.
 
     Input: `nums = [8,2,4,7]`, `limit = 4`
+    
     Output: `2`
+    
     Explanation: All subarrays are:
+    ```
     `[8]` with maximum absolute diff `|8-8| = 0 <= 4`.
     `[8,2]` with maximum absolute diff `|8-2| = 6 > 4`.
     `[8,2,4]` with maximum absolute diff `|8-2| = 6 > 4`.
@@ -257,8 +260,9 @@ Taille variable (la fenêtre grandit/rétrécit selon une condition)
     `[4,7]` with maximum absolute diff `|4-7| = 3 <= 4`.
     `[7]` with maximum absolute diff `|7-7| = 0 <= 4`.
     Therefore, the size of the longest subarray is 2.
+    ```
 
-38. **Maximum Number of Vowels in a Substring of Given Length**
+39. **Maximum Number of Vowels in a Substring of Given Length**
 
     Given a string s and an integer k.
 
@@ -352,6 +356,7 @@ Taille variable (la fenêtre grandit/rétrécit selon une condition)
     Output: `6`
     
     Explanation: `[1,1,1,0,0,1,1,1,1,1,1]`
+    
     Bolded numbers were flipped from 0 to 1. The longest subarray is underlined.
 
 52. **Binary Subarrays With Sum**
@@ -363,10 +368,12 @@ Taille variable (la fenêtre grandit/rétrécit selon une condition)
     Output: `4`
     
     Explanation: The 4 subarrays are:
+    ```
     `[1,0,1,0,1]`
     `[1,0,1,0,1]`
     `[1,0,1,0,1]`
     `[1,0,1,0,1]`
+    ```
 
 54. **Maximum Length of Repeated Subarray**
 
