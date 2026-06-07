@@ -67,23 +67,23 @@ Taille variable (la fenêtre grandit/rétrécit selon une condition)
 
 11. **Length of the Longest Substring That Doesn't Contain Any Vowels**
 
-   Input: `s = "codeforintelligents"`
-   
-   Output: `3`
-   
-   Explanation: 'nts' is the longest substring that doesn't contain any vowels.
+    Input: `s = "codeforintelligents"`
+      
+    Output: `3`
+      
+    Explanation: 'nts' is the longest substring that doesn't contain any vowels.
 
 11. **Count Negative Elements Present in Every K-Length Subarray**
 
-   Input: `arr = [-1, 2, -2, 3, 5, -7, -5]`, `K = 3`
+    Input: `arr = [-1, 2, -2, 3, 5, -7, -5]`, `K = 3`
    
-   Output: `2, 1, 1, 1, 2`
+    Output: `2, 1, 1, 1, 2`
 
 11. **Minimum Size Subarray Sum**
 
-   Input: `target = 7`, `nums = [2,3,1,2,4,3]`
+    Input: `target = 7`, `nums = [2,3,1,2,4,3]`
    
-   Output: `2`
+    Output: `2`
    
    Explanation: The subarray `[4,3]` has the minimal length under the problem constraint.
 
