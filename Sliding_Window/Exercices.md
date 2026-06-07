@@ -1,6 +1,6 @@
 # Sliding Window Algorithm
 
-'''
+```
 Taille fixe (k est donné)
 1, 3, 6, 8, 14, 15, 16, 20, 24, 29
 
@@ -15,7 +15,7 @@ Taille variable (la fenêtre grandit/rétrécit selon une condition)
 19 (Taille fixe sur minSize suffit (le maxSize est un piège)), 
 22 (Fenêtre fixe sur le complément (inverser le problème)), 
 32
-'''
+```
 
 1. **Maximum Sum Subarray of Size K**
 
