@@ -85,7 +85,7 @@ Taille variable (la fenêtre grandit/rétrécit selon une condition)
    
     Output: `2`
    
-   Explanation: The subarray `[4,3]` has the minimal length under the problem constraint.
+    Explanation: The subarray `[4,3]` has the minimal length under the problem constraint.
 
 11. **Longest Repeating Character Replacement**
 
