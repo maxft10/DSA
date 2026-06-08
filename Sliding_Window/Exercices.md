@@ -1,9 +1,11 @@
 # Sliding Window Algorithm
 
 **Taille fixe (k est donné)**
+
 1, 3, 6, 8, 14, 15, 16, 20, 24, 29
 
 **Taille variable (la fenêtre grandit/rétrécit selon une condition)**
+
 4, 7, 9, 10, 17, 18, 21, 23, 25, 26, 27, 28, 30, 31, 33, 34, 35
 
 **Variantes :**
