@@ -22,6 +22,36 @@ int main()
 }
 */
 
+string longest_substrings_k_distincts_char3(string v, int k){
+
+    int n = 0;
+    string res = "";
+    string sub = "";
+    for(int i=0; i<v.size(); i++){
+        sub = v[i]; n = 1;
+        for(int j=i+1; j<v.size(); j++){
+            if(sub.find(v[j]) == std::string::npos){
+                n++;
+                if(n>k){
+                    break;
+                }
+                else{
+                    sub += v[j];
+                }
+            }
+            else{
+                sub += v[j];
+            }
+        }
+        if(sub.size()>res.size()){
+            res = sub;
+        }
+    }
+
+    cout<<res<<endl;
+    return res;
+}
+
 string longest_substrings_k_distincts_char1(string& text, int k){
     int n = text.size();
 
@@ -81,4 +111,68 @@ string longest_substrings_k_distincts_char(string& text, int k){
 
     res = text.substr(lb, len);
     return res;
+}
+
+/*
+7. **Length of the Longest Substring That Doesn't Contain Any Vowels**
+
+   Input: `s = "codeforintelligents"`
+
+   Output: `3`
+
+   Explanation: 'nts' is the longest substring that doesn't contain any vowels.
+*/
+
+int longest_substring_no_vowels(string v){
+
+    string vowels = "aeiouy";
+    string res = "";
+
+    int left = 0;
+
+    int start = 0;
+    int len = 0;
+
+    for(int right=0; right<v.size(); right++){
+
+        if(vowels.find(v[right]) != std::string::npos){
+            left = right+1;
+        }
+
+        if(right-left+1>len){
+            len = right-left+1;
+            start = left;
+        }
+    }
+
+    res = v.substr(start, len);
+    cout<<res<<res.size()<<endl;
+    return res.size();
+}
+
+// No sliding window
+int longest_substring_no_vowels_no_sw(string v){
+
+    string vowels = "aeiouy";
+    string res = "";
+    string sub = "";
+
+    int left = 0;
+
+
+    for(int right=0; right<v.size(); right++){
+
+        if(vowels.find(v[right]) == std::string::npos){
+            sub += v[right];
+        }
+        else{
+            sub = "";
+        }
+
+        if(sub.size()>res.size()){
+            res = sub;
+        }
+    }
+
+    return res.size();
 }
